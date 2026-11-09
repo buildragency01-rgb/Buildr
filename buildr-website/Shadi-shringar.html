@@ -1,0 +1,192 @@
+<title>Shaadi Shringar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;700&display=swap">
+<style>
+/* Layout: Indian bridal. Deep maroon, antique gold, centred ornamental headers (Hindi + English), jharokha-arch gallery, three bridal packages */
+:root{--bg:#4a0f1e;--bg2:#3a0b17;--card:#5c1626;--fg:#fbeedd;--muted:#e0c4b0;--gold:#e2b45a;--gold2:#a47a2c;--line:#7d2a3b;color-scheme:dark;
+--disp:'Rozha One','Noto Serif Devanagari',Georgia,serif;--sans:'Mukta','Noto Sans Devanagari',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.65;background-image:radial-gradient(circle at 1px 1px,rgba(226,180,90,.12) 1px,transparent 0);background-size:26px 26px}
+.w{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--disp);font-weight:400;margin:0;line-height:1.15;text-wrap:balance}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.topbar{background:var(--bg2);color:var(--gold);font-size:.85rem;text-align:center;padding:8px 16px;border-bottom:1px solid var(--gold2)}
+nav .w{display:flex;justify-content:space-between;align-items:center;padding-block:18px;gap:12px;flex-wrap:wrap}
+.logo{font-family:var(--disp);font-size:1.7rem;color:var(--gold);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap;font-weight:500}
+nav ul a{text-decoration:none;color:var(--muted)}nav ul a:hover{color:var(--gold)}
+.orn{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--gold);margin:0 0 10px}
+.orn::before,.orn::after{content:"";height:1px;width:min(18vw,120px);background:linear-gradient(90deg,transparent,var(--gold))}
+.orn::after{transform:scaleX(-1)}
+.hero{text-align:center;padding-block:56px 70px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);color:var(--gold);margin:6px 0 10px}
+.hero .hi{font-family:var(--disp);font-size:clamp(1.3rem,3.5vw,2rem);color:var(--fg)}
+.hero p{max-width:52ch;margin:20px auto 30px;color:var(--muted)}
+.frame{border:1px solid var(--gold2);outline:1px solid var(--gold2);outline-offset:6px;padding:46px 20px;max-width:880px;margin:0 auto;background:rgba(58,11,23,.55)}
+.btn{display:inline-block;background:var(--gold);color:#3a0b17;padding:14px 34px;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;letter-spacing:.04em}
+.btn:hover{background:#f1c97d}
+.btn.o{background:transparent;color:var(--gold);border:1px solid var(--gold);margin-left:10px}
+.sec{padding-block:72px;text-align:center}
+.sec.dark{background:var(--bg2)}
+.sec h2{font-size:clamp(2rem,5vw,3rem);color:var(--gold)}
+.sec .sub{color:var(--muted);margin:6px 0 38px}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center;margin-bottom:38px}
+.pk .c{background:var(--card);border:1px solid var(--gold2);padding:30px 22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.pk .c.feat{outline:2px solid var(--gold);outline-offset:-2px;background:#6a1a2c}
+.pk h3{font-size:1.5rem;color:var(--gold)}
+.pk .pr{font-family:var(--disp);font-size:2.2rem;font-variant-numeric:tabular-nums}
+.pk ul{list-style:none;margin:0;padding:0;color:var(--muted);font-size:.95rem}
+.pk li{padding:5px 0;border-top:1px solid var(--line)}
+.alc{max-width:760px;margin:0 auto;text-align:left}
+.alc div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--gold2)}
+.alc span:last-child{color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gal div{aspect-ratio:3/4;border-radius:999px 999px 6px 6px;border:2px solid var(--gold2);display:flex;align-items:flex-end;justify-content:center;padding:14px;min-width:0}
+.gal b{background:var(--bg2);border:1px solid var(--gold2);font-weight:500;font-size:.8rem;padding:3px 12px}
+.note{color:var(--muted);font-size:.85rem;margin-top:22px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;text-align:left;align-items:center}
+.about>*{min-width:0}
+.about p{color:var(--muted);margin:0 0 14px}
+.about h2{text-align:left}
+.seal{aspect-ratio:1;max-width:320px;margin:0 auto;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;text-align:center;outline:1px solid var(--gold2);outline-offset:8px;padding:20px;background:radial-gradient(circle,#6a1a2c,#3a0b17)}
+.seal b{font-family:var(--disp);font-size:3.4rem;color:var(--gold);font-weight:400;line-height:1;display:block}
+.seal span{font-size:.9rem;color:var(--muted)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left;max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--gold2);padding:30px}
+form .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--gold);font-weight:700;min-width:0}
+input,select,textarea{font:inherit;font-size:1rem;font-weight:400;color:var(--fg);background:var(--bg2);border:1px solid var(--gold2);padding:11px 12px;width:100%;min-width:0;border-radius:0}
+.out{max-width:760px;margin:20px auto 0;padding:18px;border:1px solid var(--gold);background:var(--card);text-align:left}
+.out.err{color:#ffb4a6;border-color:#c0604c}
+.out .btn{margin-top:12px}
+.hrs{max-width:520px;margin:0 auto;border-collapse:collapse;width:100%}
+.hrs td{padding:12px 6px;border-bottom:1px dashed var(--gold2);text-align:left}
+.hrs td:last-child{text-align:right;color:var(--gold);font-variant-numeric:tabular-nums}
+.hrs tr.today td{background:var(--card);font-weight:700}
+.soc{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.soc a{border:1px solid var(--gold);padding:10px 24px;text-decoration:none;color:var(--gold)}
+.soc a:hover{background:var(--gold);color:#3a0b17}
+footer{background:var(--bg2);border-top:1px solid var(--gold2);padding-block:26px;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:820px){.pk,.about{grid-template-columns:1fr}.gal{grid-template-columns:repeat(2,1fr)}form{grid-template-columns:1fr}.btn.o{margin:10px 0 0}.about h2{text-align:center}}
+
+/* PHOTO STYLE: photo apne dabbe me poori fit ho (object-fit:cover). Yahan kuch badalne ki zarurat nahi. */
+.gal div{position:relative;overflow:hidden}.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.gal b{position:relative;z-index:1}[hidden]{display:none!important}
+.hero-img{display:block;width:min(260px,70%);aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 6px 6px;border:2px solid var(--gold2);margin:0 auto 24px}
+</style>
+<!--
+=====================================================================
+  PAGE GUIDE (Hindi me)
+  Photos yahan lagti hain (search karne ke liye Ctrl+F dabayein):
+    1) "PHOTO 1: HERO"     -> upar ki badi photo
+    2) "PHOTO 2: GALLERY"  -> gallery ki saari photos (script me)
+  Apni photos "images" folder me rakhein, naam list ke hisab se.
+
+  Baaki badalne wali cheezein:
+    - Naam / address / phone  -> HTML me dhundhein (Ctrl+F)
+    - Phone number (WhatsApp) -> 919999999999 ko apne number se badlein
+                                 (country code 91 ke saath, 3 jagah hai)
+    - Prices                  -> script me "var SERVICES"
+    - Timings                 -> script me "var H"
+=====================================================================
+-->
+
+<div class="topbar">Wedding season bookings open · Call +91 99999 99999</div>
+<nav><div class="w"><a class="logo" href="#top">Shaadi Shringar</a>
+<ul><li><a href="#services">Packages</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#about">About</a></li><li><a href="#book">Book</a></li><li><a href="#timing">Timings</a></li></ul></div></nav>
+
+<header class="hero" id="top"><div class="w"><div class="frame">
+<!-- PHOTO 1: HERO (upar ki dulhan ki photo). File ka naam: images/hero.jpg
+       Photo na mile to yeh jagah khali rahegi. -->
+<img class="hero-img" src="images/hero.jpg" alt="Bridal look by Shaadi Shringar" onerror="this.remove()">
+<div class="orn">✦</div>
+<div class="hi">दुल्हन का श्रृंगार</div>
+<h1>Shaadi Shringar</h1>
+<p>Bridal makeup studio for haldi, mehendi, sangeet, shaadi and reception. Airbrush and HD looks, heirloom-style jewellery setting and dupatta draping, all under one roof.</p>
+<a class="btn" href="#book">Book your date</a><a class="btn o" href="#services">View packages</a>
+</div></div></header>
+
+<section class="sec dark" id="services"><div class="w">
+<div class="orn">✦</div><h2>सेवाएँ और कीमत</h2><p class="sub">Services and prices</p>
+<div class="pk">
+<div class="c"><h3>Classic</h3><span class="pr">₹15,000</span><ul><li>HD bridal makeup</li><li>Hairstyle</li><li>Saree or lehenga draping</li><li>Touch-up kit</li></ul></div>
+<div class="c feat"><h3>Royal</h3><span class="pr">₹28,000</span><ul><li>Airbrush bridal makeup</li><li>Hairstyle with extensions</li><li>Draping and jewellery setting</li><li>Free trial session</li><li>Artist stays 3 hours</li></ul></div>
+<div class="c"><h3>Maharani</h3><span class="pr">₹45,000</span><ul><li>Two looks: shaadi and reception</li><li>Mother of bride look</li><li>Trial session</li><li>Travel within city</li><li>Artist stays all day</li></ul></div>
+</div>
+<div class="alc" id="alc"></div>
+<p class="note">Sample prices. Outstation travel is charged extra.</p></div></section>
+
+<section class="sec" id="gallery"><div class="w">
+<div class="orn">✦</div><h2>गैलरी</h2><p class="sub">Our brides</p>
+<div class="gal" id="gal"></div><p class="note">Colour arches are placeholders. Add your real bridal photos.</p></div></section>
+
+<section class="sec dark" id="about"><div class="w about">
+<div><h2>हमारे बारे में</h2><p style="margin-top:14px">Shaadi Shringar began with one bride and one borrowed mirror. Today a team of six artists works across Lucknow, Kanpur and Barabanki.</p><p>We match makeup to your outfit, your jewellery and the lights of your venue, and we start the day early so that no one is ever rushed.</p></div>
+<div class="seal"><div><b>900+</b><span>brides dressed since 2015</span></div></div>
+</div></section>
+
+<section class="sec" id="book"><div class="w">
+<div class="orn">✦</div><h2>बुकिंग</h2><p class="sub">Book your date</p>
+<form id="bookForm" novalidate>
+<label>Name<input id="cname" autocomplete="name"></label>
+<label>Phone<input id="cphone" type="tel" autocomplete="tel" placeholder="10-digit number"></label>
+<label class="full">Package or service<select id="cservice"></select></label>
+<label>Wedding / event date<input id="date" type="date"></label>
+<label>Reporting time<select id="ctime"><option>5:00 AM</option><option>6:00 AM</option><option>8:00 AM</option><option>10:00 AM</option><option>1:00 PM</option><option>4:00 PM</option></select></label>
+<label class="full">Venue and notes<textarea id="cnotes" rows="2" placeholder="Venue, city, functions to cover"></textarea></label>
+<button class="btn full" type="submit">Check availability</button></form>
+<div id="bookOut" class="out" hidden></div></div></section>
+
+<section class="sec dark" id="timing"><div class="w">
+<div class="orn">✦</div><h2>समय</h2><p class="sub">Studio timings</p>
+<table class="hrs" id="hrs"></table>
+<p class="note">Bridal appointments can start as early as 4 AM on wedding days, by booking.</p>
+<div class="soc" style="margin-top:34px"><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a></div>
+</div></section>
+
+<footer><div class="w">© Shaadi Shringar · 12, Garden Road, Hazratganj, Lucknow · Sample design</div></footer>
+
+<script>
+var PK=[["Classic bridal package",15000],["Royal bridal package",28000],["Maharani bridal package",45000]];
+var ALC=[["Engagement / Sagan look",8000],["Mehendi or Haldi look",3500],["Party makeup (guests)",2500],["Mother of bride look",5000],["Hairstyle only",1500],["Saree draping",700]];
+var al=document.getElementById('alc'),sel=document.getElementById('cservice');
+function opt(n,p){var o=document.createElement('option');o.value=n;o.textContent=n+' (₹'+p.toLocaleString('en-IN')+')';sel.appendChild(o);}
+PK.forEach(function(x){opt(x[0],x[1]);});
+ALC.forEach(function(s){var r=document.createElement('div'),a=document.createElement('span'),b=document.createElement('span');a.textContent=s[0];b.textContent='₹'+s[1].toLocaleString('en-IN');r.appendChild(a);r.appendChild(b);al.appendChild(r);opt(s[0],s[1]);});
+/* ===================================================================
+   PHOTO 2: GALLERY (gallery ki photos yahan se aati hain)
+   Har line = ek photo. Line ka format:
+     [ "photo ka naam" , "photo ki file ka rasta" , "placeholder rang" ],
+   - photo ka naam   : photo ke neeche chhota label dikhta hai
+   - photo ki file   : 'images' folder me rakhi photo ka naam
+   - placeholder rang: photo na mile tab yeh rang dikhta hai (chhod dein)
+   NAYI PHOTO JODNE KE LIYE: neeche koi ek line copy karke uske baad paste
+   karein, aur naam + file ka naam badal dein (jaise images/gallery7.jpg).
+   Har line ke end me comma , zaroor rakhein.
+   =================================================================== */
+var G=[
+  ["Shaadi","images/gallery1.jpg","linear-gradient(160deg,#c0392b,#e2b45a)"],
+  ["Reception","images/gallery2.jpg","linear-gradient(160deg,#6c2a7a,#e08fa8)"],
+  ["Mehendi","images/gallery3.jpg","linear-gradient(160deg,#3d7a3a,#e2b45a)"],
+  ["Haldi","images/gallery4.jpg","linear-gradient(160deg,#f0b429,#c8691a)"],
+];
+var g=document.getElementById('gal');/* Gallery ke har photo ke liye ek dabba (tile) banta hai */
+G.forEach(function(x){
+  var t=document.createElement('div');   // photo ka dabba
+  t.style.background=x[2];               // photo na mile to yeh rang dikhega
+  var im=new Image();                    // photo ke liye <img> banaya
+  im.alt=x[0];                           // photo ka naam (screen reader ke liye)
+  im.onerror=function(){im.remove();};   // file na mile to photo hata do, rang wala dabba rahe
+  im.src=x[1];                           // <<< YAHAN photo ki file lagti hai (list me likhe rasta se)
+  t.appendChild(im);                     // photo ko dabbe me daala
+  var b=document.createElement('b');b.textContent=x[0];t.appendChild(b);g.appendChild(t);});
+var H=[["Monday","9 AM – 8 PM"],["Tuesday","9 AM – 8 PM"],["Wednesday","9 AM – 8 PM"],["Thursday","9 AM – 8 PM"],["Friday","9 AM – 9 PM"],["Saturday","8 AM – 9 PM"],["Sunday","10 AM – 6 PM"]],td=(new Date().getDay()+6)%7,tb=document.getElementById('hrs');
+H.forEach(function(h,i){var r=tb.insertRow();if(i==td)r.className='today';r.insertCell().textContent=h[0]+(i==td?' (today)':'');r.insertCell().textContent=h[1];});
+var d=document.getElementById('date'),n=new Date();n.setMinutes(n.getMinutes()-n.getTimezoneOffset());d.min=n.toISOString().slice(0,10);
+document.getElementById('bookForm').addEventListener('submit',function(e){e.preventDefault();
+var nm=document.getElementById('cname').value.trim(),ph=document.getElementById('cphone').value.trim(),sv=document.getElementById('cservice').value,dt=d.value,tm=document.getElementById('ctime').value,nt=document.getElementById('cnotes').value.trim(),o=document.getElementById('bookOut');o.hidden=false;
+if(!nm||ph.replace(/\D/g,'').length<10||!dt){o.className='out err';o.textContent='Please enter your name, a 10-digit phone number and the event date.';return;}
+var pretty=new Date(dt+'T00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+var msg='Namaste, I would like to book '+sv+' on '+pretty+', reporting at '+tm+'. Name: '+nm+', Phone: '+ph+(nt?'. Notes: '+nt:'');
+o.className='out';o.textContent=nm+', request: '+sv+' on '+pretty+' at '+tm+'. Send it on WhatsApp so we can confirm availability.';
+var a=document.createElement('a');a.className='btn';a.style.display='inline-block';a.target='_blank';a.rel='noopener';a.textContent='Send on WhatsApp';a.href='https://wa.me/919999999999?text='+encodeURIComponent(msg);o.appendChild(document.createElement('br'));o.appendChild(a);});
+</script>

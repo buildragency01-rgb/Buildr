@@ -1,0 +1,199 @@
+<title>Pearl Skin and Makeup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: soft glass "glow" clinic style. Pearl and peach, blurred colour orbs, frosted cards, before/after slider, category filter chips */
+:root{--bg:#fbf6f1;--fg:#2a2226;--muted:#7d6f74;--accent:#c9786c;--accent-fg:#fff;--glass:rgba(255,255,255,.62);--glass-b:rgba(255,255,255,.9);--line:#eadbd2;--orb1:#ffd3c2;--orb2:#f6c4d6;--orb3:#ffe9c9;
+--disp:'DM Serif Display',Georgia,serif;--sans:'Outfit',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1416;--fg:#f6ece8;--muted:#b9a7ab;--accent:#e9a094;--accent-fg:#2a1518;--glass:rgba(255,255,255,.06);--glass-b:rgba(255,255,255,.14);--line:#3a2d31;--orb1:#6a3a36;--orb2:#5b3048;--orb3:#6b5030;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1416;--fg:#f6ece8;--muted:#b9a7ab;--accent:#e9a094;--accent-fg:#2a1518;--glass:rgba(255,255,255,.06);--glass-b:rgba(255,255,255,.14);--line:#3a2d31;--orb1:#6a3a36;--orb2:#5b3048;--orb3:#6b5030;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.65;font-weight:300;position:relative;overflow-x:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.9}
+.w{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));position:relative;z-index:1}
+h1,h2,h3{font-family:var(--disp);font-weight:400;margin:0;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-b);border-radius:26px}
+nav{position:relative;z-index:2}
+nav .w{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:20px;flex-wrap:wrap}
+.logo{font-family:var(--disp);font-size:1.6rem;text-decoration:none}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px;flex-wrap:wrap;font-size:.9rem;border-radius:999px;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+nav ul a{display:block;padding:7px 16px;text-decoration:none;border-radius:999px;color:var(--muted)}nav ul a:hover{background:var(--accent);color:var(--accent-fg)}
+.lab{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-block:40px 80px}
+.hero h1{font-size:clamp(2.9rem,7.5vw,5.4rem);margin:14px 0 18px}
+.hero h1 i{color:var(--accent)}
+.hero p{color:var(--muted);max-width:44ch;margin:0 0 28px;font-size:1.05rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:15px 32px;border-radius:999px;border:0;font:inherit;font-weight:500;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.g{background:var(--glass);color:var(--fg);border:1px solid var(--line);margin-left:8px}
+.cmp{position:relative;aspect-ratio:4/5;border-radius:200px 200px 26px 26px;overflow:hidden;border:1px solid var(--glass-b);user-select:none;touch-action:pan-y;max-width:100%}
+.cmp .l,.cmp .a{position:absolute;inset:0;display:flex;align-items:flex-end;padding:22px}
+.cmp .l{background:linear-gradient(170deg,#e8d7ce,#c9b1a5)}
+.cmp .a{background:linear-gradient(170deg,#ffd6c8,#e99a8f 55%,#b95a63);clip-path:inset(0 0 0 50%)}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .tag{position:relative;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(10px);padding:4px 14px;border-radius:999px;font-size:.78rem;color:#2a2226}
+.cmp .a .tag{margin-left:auto}
+.cmp .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;pointer-events:none;box-shadow:0 0 10px rgba(0,0,0,.2)}
+.cmp .bar::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:#2a2226;display:grid;place-items:center}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmpnote{text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px}
+.sec{padding-block:70px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 28px}
+.chip{background:var(--glass);border:1px solid var(--line);color:var(--fg);padding:9px 20px;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{padding:24px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card .c{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.card h3{font-size:1.45rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.card .pr{margin-top:auto;padding-top:14px;font-family:var(--disp);font-size:1.9rem;font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:.85rem;margin-top:16px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal div{aspect-ratio:1;border-radius:22px;display:flex;align-items:flex-end;padding:10px;position:relative;overflow:hidden;min-width:0}
+.gal div:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal b{position:relative;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(10px);color:#2a2226;font-weight:400;font-size:.78rem;padding:3px 12px;border-radius:999px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.two>*{min-width:0}
+.about{padding:38px}
+.about p{color:var(--muted);margin:14px 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.facts div{font-family:var(--disp);font-size:2rem;color:var(--accent);line-height:1}
+.facts span{display:block;font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:6px}
+.soc{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.soc a{padding:9px 18px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-size:.88rem;background:var(--glass)}
+.soc a:hover{background:var(--accent);color:var(--accent-fg)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:28px}
+form .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:.8rem;color:var(--muted);min-width:0}
+input,select,textarea{font:inherit;font-size:1rem;font-weight:300;color:var(--fg);background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;min-width:0}
+.out{margin-top:16px;padding:18px;border-radius:18px}
+.out.err{border-color:var(--accent)}
+.out .btn{margin-top:12px}
+.hrs{width:100%;border-collapse:collapse}
+.hrs td{padding:13px 0;border-bottom:1px solid var(--line)}
+.hrs td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.hrs tr.today td{color:var(--accent);font-weight:500}
+footer .w{padding-block:30px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.84rem}
+@media(max-width:860px){.hero .w,.two{grid-template-columns:1fr;gap:30px}.cmp{max-width:380px;margin:0 auto}.gal{grid-template-columns:repeat(2,1fr)}.gal div:nth-child(1){grid-column:span 2;grid-row:auto;aspect-ratio:16/10}form{grid-template-columns:1fr}.facts{grid-template-columns:repeat(3,1fr)}}
+</style>
+<!--
+=====================================================================
+  PEARL TEMPLATE: GUIDE (Hindi me)
+
+  PHOTOS KAHAN LAGTI HAIN (Ctrl+F se yeh shabd dhundhein):
+    1) "PHOTO 1: BEFORE/AFTER"  -> upar ki slider wali 2 photos
+    2) "PHOTO 2: GALLERY"       -> gallery ki saari photos
+
+  Photos 'images' folder me rakhein. Naam bilkul wahi rakhein jo
+  neeche likha hai (chhote akshar, space nahi, .jpg).
+
+  BADALNE WALI BAAKI CHEEZEIN:
+    - Salon ka naam        -> "Pearl" (Ctrl+H se sab jagah badal sakte hain)
+    - WhatsApp number      -> 919999999999 (country code 91 ke saath, 1 jagah)
+    - Prices aur services  -> script me "var S"
+    - Opening timings      -> script me "var H"
+    - Address / phone      -> "12, Garden Road" wali line dhundhein
+=====================================================================
+-->
+
+<div class="orb" style="width:420px;height:420px;background:var(--orb1);top:-120px;right:-100px"></div>
+<div class="orb" style="width:380px;height:380px;background:var(--orb2);top:620px;left:-160px"></div>
+<div class="orb" style="width:360px;height:360px;background:var(--orb3);top:1500px;right:-120px"></div>
+
+<nav><div class="w"><a class="logo" href="#top">Pearl</a>
+<ul><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#about">About</a></li><li><a href="#book">Book</a></li><li><a href="#timing">Hours</a></li></ul></div></nav>
+
+<header class="hero" id="top"><div class="w">
+<div><span class="lab">Skin first makeup studio</span>
+<h1>Skin that glows <i>before</i> the foundation does.</h1>
+<p>Facials, glass-skin prep and light, dewy makeup for weddings, shoots and every day. Gentle products, patch tests and a finish that looks like skin.</p>
+<a class="btn" href="#book">Book your date</a><a class="btn g" href="#services">See prices</a></div>
+<div><!-- PHOTO 1: BEFORE/AFTER (slider ki 2 photos)
+     - Pehle wali photo : images/before.jpg  (makeup se pehle ki photo, bayein taraf dikhti hai)
+     - Dusri photo      : images/after.jpg   (makeup ke baad ki photo, daayein taraf dikhti hai)
+     Dono photos ek hi size aur ek hi angle ki rakhein. Photo na ho to rang dikhta rahega. -->
+<div class="cmp" id="cmp"><div class="l"><img src="images/before.jpg" alt="Before" onerror="this.remove()"><span class="tag">Before</span></div><div class="a" id="after"><!-- AFTER photo (yahan images/after.jpg lagti hai) --><img src="images/after.jpg" alt="After" onerror="this.remove()"><span class="tag">After</span></div><div class="bar" id="bar"></div>
+<input type="range" min="0" max="100" value="50" id="range" aria-label="Before and after slider"></div><p class="cmpnote">Drag to compare. Replace with your own client photo.</p></div>
+</div></header>
+
+<section class="sec" id="services"><div class="w"><span class="lab">Services and prices</span><h2 style="margin-top:10px">Treatments</h2>
+<div class="chips" id="chips"></div><div class="cards" id="cards"></div><p class="note">Sample prices in rupees.</p></div></section>
+
+<section class="sec" id="gallery"><div class="w"><span class="lab">Gallery</span><h2 style="margin:10px 0 28px">Recent glow</h2><div class="gal" id="gal"></div><p class="note">Colour tiles are placeholders for real photos.</p></div></section>
+
+<section class="sec" id="about"><div class="w two">
+<div class="glass about"><span class="lab">About us</span><h2 style="margin-top:10px">Gentle hands, honest results</h2><p>Pearl started as a skincare room and grew into a full makeup studio. Every appointment begins with a skin check, because good makeup sits on healthy skin.</p><div class="facts"><div>7 yrs<span>in practice</span></div><div>2,000+<span>clients</span></div><div>4.9<span>rating</span></div></div>
+<div class="soc"><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a></div></div>
+<div><span class="lab">Visit</span><h2 style="margin:10px 0 18px;font-size:2.2rem">Studio hours</h2><table class="hrs" id="hrs"></table><p class="note">12, Garden Road, Hazratganj, Lucknow · +91 99999 99999</p></div>
+</div></section>
+
+<section class="sec" id="book"><div class="w two">
+<div><span class="lab">Booking</span><h2 style="margin:10px 0 16px">Choose your date</h2><p style="color:var(--muted)">Pick a treatment, a day and a time. We confirm on WhatsApp the same day.</p></div>
+<div><form class="glass" id="bookForm" novalidate>
+<label>Name<input id="cname" autocomplete="name"></label><label>Phone<input id="cphone" type="tel" autocomplete="tel" placeholder="10-digit number"></label>
+<label class="full">Treatment<select id="cservice"></select></label>
+<label>Date<input id="date" type="date"></label><label>Time<select id="ctime"><option>10:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>4:00 PM</option><option>6:00 PM</option></select></label>
+<label class="full">Notes<textarea id="cnotes" rows="2" placeholder="Skin concerns, allergies, occasion"></textarea></label>
+<button class="btn full" type="submit">Request this date</button></form><div id="bookOut" class="out glass" hidden></div></div>
+</div></section>
+
+<footer><div class="w"><span>© Pearl Skin and Makeup</span><span>Sample design. Replace name, prices and photos.</span></div></footer>
+
+<script>
+var S=[["Makeup","Day Makeup","Dewy, light coverage",1500],["Makeup","Party Makeup","Soft glam with lashes",3000],["Makeup","Bridal Makeup","Skin prep, makeup and hair",19000],["Skin","Glass Skin Facial","Deep hydration, 60 minutes",2800],["Skin","Pre-event Glow","Quick facial before makeup",1800],["Skin","Lash Lift and Tint","Lasts 4 to 6 weeks",2000],["Hair","Hairstyling","Soft waves, buns, braids",1300],["Hair","Saree Draping","Pleating and pinning",600]];
+var cats=['All','Makeup','Skin','Hair'],chips=document.getElementById('chips'),cards=document.getElementById('cards'),sel=document.getElementById('cservice');
+function fmt(n){return '₹'+n.toLocaleString('en-IN');}
+function render(c){[].forEach.call(chips.children,function(x){x.setAttribute('aria-pressed',x.textContent===c);});cards.innerHTML='';
+S.filter(function(s){return c==='All'||s[0]===c;}).forEach(function(s){var d=document.createElement('div');d.className='card glass';d.innerHTML='<span class="c"></span><h3></h3><p></p><span class="pr"></span>';d.querySelector('.c').textContent=s[0];d.querySelector('h3').textContent=s[1];d.querySelector('p').textContent=s[2];d.querySelector('.pr').textContent=fmt(s[3]);cards.appendChild(d);});}
+cats.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=c;b.onclick=function(){render(c);};chips.appendChild(b);});render('All');
+S.forEach(function(s){var o=document.createElement('option');o.value=s[1];o.textContent=s[1]+' ('+fmt(s[3])+')';sel.appendChild(o);});
+var range=document.getElementById('range');range.addEventListener('input',function(){var v=range.value;document.getElementById('after').style.clipPath='inset(0 0 0 '+v+'%)';document.getElementById('bar').style.left=v+'%';});
+/* ===================================================================
+   PHOTO 2: GALLERY (gallery ki saari photos yahan se aati hain)
+
+   Har line = ek photo. Line ka format:
+     [ "photo ka naam" , "photo ki file ka rasta" , "placeholder rang" ],
+
+   1) photo ka naam    -> photo ke neeche chhota label dikhta hai. Yahan kuch bhi likh sakte hain.
+   2) photo ki file    -> 'images' folder me rakhi photo ka naam, jaise images/gallery1.jpg
+                          Photo ka naam badalna ho to dono jagah (file ka naam aur yahan) same rakhein.
+   3) placeholder rang -> photo na mile tab yeh rang dikhta hai. Chhod dein.
+
+   NAYI PHOTO JODNE KE LIYE:
+     - Neeche koi ek line copy karke uske neeche paste karein
+     - Naam aur file ka naam badlein, jaise images/gallery6.jpg
+     - Har line ke end me comma , rakhein
+   Photos 5, 9 ya 13 hon to gallery ki grid poori bharti hai (pehli photo badi dikhti hai).
+   =================================================================== */
+var G=[
+  ["Bridal glow","images/gallery1.jpg","linear-gradient(150deg,#ffd6c8,#d98a8a)"],
+  ["Dewy day","images/gallery2.jpg","linear-gradient(150deg,#ffe9c9,#e6b894)"],
+  ["Glass skin","images/gallery3.jpg","linear-gradient(150deg,#f6d5e0,#c998b3)"],
+  ["Soft glam","images/gallery4.jpg","linear-gradient(150deg,#ffd9c0,#cf7f73)"],
+  ["Shoot","images/gallery5.jpg","linear-gradient(150deg,#f3e0d2,#b79484)"],
+];
+var gl=document.getElementById('gal');
+/* Gallery ki har photo ke liye ek dabba (tile) banta hai */
+G.forEach(function(x){
+  var t=document.createElement('div');   // photo ka dabba
+  t.style.background=x[2];               // photo na mile to yeh rang dikhega
+  var im=new Image();                    // photo ke liye <img> banaya
+  im.alt=x[0];                           // photo ka naam
+  im.onerror=function(){im.remove();};   // file na mile to photo hata do, rang wala dabba rahe
+  im.src=x[1];                           // <<< YAHAN photo ki file lagti hai (list wale rasta se)
+  t.appendChild(im);var b=document.createElement('b');b.textContent=x[0];t.appendChild(b);gl.appendChild(t);});
+var H=[["Monday","10 AM – 8 PM"],["Tuesday","10 AM – 8 PM"],["Wednesday","10 AM – 8 PM"],["Thursday","10 AM – 8 PM"],["Friday","10 AM – 9 PM"],["Saturday","9 AM – 9 PM"],["Sunday","Closed"]],td=(new Date().getDay()+6)%7,tb=document.getElementById('hrs');
+H.forEach(function(h,i){var r=tb.insertRow();if(i==td)r.className='today';r.insertCell().textContent=h[0]+(i==td?' (today)':'');r.insertCell().textContent=h[1];});
+var d=document.getElementById('date'),n=new Date();n.setMinutes(n.getMinutes()-n.getTimezoneOffset());d.min=n.toISOString().slice(0,10);
+document.getElementById('bookForm').addEventListener('submit',function(e){e.preventDefault();
+var nm=document.getElementById('cname').value.trim(),ph=document.getElementById('cphone').value.trim(),sv=sel.value,dt=d.value,tm=document.getElementById('ctime').value,nt=document.getElementById('cnotes').value.trim(),o=document.getElementById('bookOut');o.hidden=false;
+if(!nm||ph.replace(/\D/g,'').length<10||!dt){o.className='out glass err';o.textContent='Please add your name, a 10-digit phone number and a date.';return;}
+var pretty=new Date(dt+'T00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+var msg='Hello, I would like to book '+sv+' on '+pretty+' at '+tm+'. Name: '+nm+', Phone: '+ph+(nt?'. Notes: '+nt:'');
+o.className='out glass';o.textContent=sv+' · '+pretty+' · '+tm+'. Send this on WhatsApp to confirm.';
+var a=document.createElement('a');a.className='btn';a.style.display='inline-block';a.target='_blank';a.rel='noopener';a.textContent='Send on WhatsApp';a.href='https://wa.me/919999999999?text='+encodeURIComponent(msg);o.appendChild(document.createElement('br'));o.appendChild(a);});
+</script>
